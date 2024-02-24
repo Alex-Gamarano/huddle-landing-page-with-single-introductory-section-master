@@ -1,0 +1,138 @@
+:root {
+  font-size: 62.5%;
+
+  --violet: hsl(257, 40%, 49%);
+  --soft-magenta: hsl(300, 69%, 71%);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  min-height: 100dvh;
+  width: 100dvw;
+  background-color: var(--violet);
+  background-image: url("./images/bg-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: "Open Sans";
+  font-weight: 400;
+  display: grid;
+  grid-template-areas:
+    "main"
+    "header"
+    "social"
+    "footer";
+  justify-items: center;
+}
+
+main {
+  width: 80%;
+  max-width: 700px;
+  grid-area: main;
+}
+header {
+  grid-area: header;
+  width: 80%;
+  color: white;
+  text-align: center;
+  font-size: 1.6rem;
+}
+.logo {
+  width: 42.5%;
+  max-width: 200px;
+  margin: 2.5rem 0;
+}
+.hero {
+  margin: 3rem 0 0;
+  width: 100%;
+}
+h1 {
+  font-family: "Poppins";
+  font-size: 2.7rem;
+}
+button {
+  width: 75%;
+  max-width: 200px;
+  margin: 3rem 0 0;
+  background-color: white;
+  color: var(--violet);
+  border: none;
+  border-radius: 25px;
+  font-weight: 400;
+  font-family: "Poppins";
+  height: 4.5rem;
+}
+
+.social {
+  grid-area: social;
+  margin: 2rem 0;
+}
+
+i {
+  color: white;
+  margin: 0 0.5rem;
+  border: 1px solid white;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+button:hover {
+  background-color: var(--soft-magenta);
+  color: white;
+}
+
+i:hover {
+  color: var(--soft-magenta);
+  border-color: var(--soft-magenta);
+}
+
+footer {
+  grid-area: footer;
+  margin: 2rem 0;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: white;
+}
+.attribution a {
+  color: var(--soft-magenta);
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-image: url("./images/bg-desktop.svg");
+
+    grid-template-areas:
+      "main   header"
+      "main   header"
+      "main   social"
+      "footer footer";
+    align-items: center;
+  }
+  header {
+    text-align: justify;
+    max-width: 600px;
+    align-self: flex-end;
+    justify-self: flex-start;
+  }
+
+  h1 {
+    font-size: 4rem;
+    max-width: 500px;
+  }
+
+  .social {
+    align-self: flex-end;
+    justify-self: flex-end;
+    margin-right: 10dvh;
+  }
+  i {
+    transform: scale(150%);
+    margin: 02rem;
+  }
+}
